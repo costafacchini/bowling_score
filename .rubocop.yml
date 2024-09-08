@@ -12,9 +12,18 @@ Style/BlockComments:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/Documentation:
+  Enabled: false
+
 Metrics/BlockLength:
-  Exclude: 
+  Exclude:
     - spec/**/*
-    
+
 RSpec/RepeatedExampleGroupBody:
   Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 10
