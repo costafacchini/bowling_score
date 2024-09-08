@@ -178,3 +178,4 @@ Modeling updates:
   - The Base for DataLoad instead receive the source on load data method, just defines load data and let the concrete class initializer be responsible for the source;
   - Join invalid score and negative score in just one validator;
   - Create Frame class and add new methods to self manage when the scores is full;
+  - Create Player class and add new method to self manage when need to add new frame or use the last frame added;
