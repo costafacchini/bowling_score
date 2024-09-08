@@ -123,11 +123,12 @@ custom.
 - [ ] tenth Frame: A spare in the first two rolls receives a third roll for bonus pins.
 
 - [ ] The program should handle bad input
-  - [ ] negative number of knocked down pins
-  - [ ] more than 10 on knocked down pins
+  - [x] negative number of knocked down pins
+  - [x] more than 10 on knocked down pins
   - [ ] invalid score value or incorrect format
   - [ ] like more than ten throws
   - [X] invalid format file
+  - [X] empty file
 
 ## Setup Ruby (only if you have not installed)
 

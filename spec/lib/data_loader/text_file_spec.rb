@@ -37,5 +37,12 @@ RSpec.describe DataLoader::TextFile do
         expect { data_loader.load_data }.to raise_error(DataLoader::Error, /Invalid score : -/)
       end
     end
+
+    context 'with input file is empty' do
+      it 'raises the corresponding error message ' do
+        data_loader = described_class.new(file_fixture('empty.txt'))
+        expect { data_loader.load_data }.to raise_error(DataLoader::Error, 'Empty file informed')
+      end
+    end
   end
 end

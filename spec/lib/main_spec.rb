@@ -41,11 +41,6 @@ RSpec.describe Main do
       end
     end
 
-    context 'with invalid score' do
-      xit 'raises the corresponding error message' do
-      end
-    end
-
     context 'with invalid number of throwings' do
       xit 'raises the corresponding error message' do
       end

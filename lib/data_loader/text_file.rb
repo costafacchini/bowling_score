@@ -10,6 +10,7 @@ module DataLoader
 
     def load_data
       validate_file_format
+      validate_file_empty
 
       File.readlines(@source).each_with_index do |line, index|
         name, score = line.split
@@ -27,6 +28,10 @@ module DataLoader
 
     def validate_file_format
       raise Error, 'Invalid file format' unless File.extname(@source) == '.txt'
+    end
+
+    def validate_file_empty
+      raise Error, 'Empty file informed' if File.zero?(@source)
     end
   end
 end
