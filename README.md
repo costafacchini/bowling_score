@@ -110,9 +110,9 @@ custom.
 
 ## Specifications
 
-- [ ] You will need to **record a video explaining the code** you created, the decisions you made, its functionality, and demonstrating the complete operation of the challenge. _Remember to show the execution from scratch, it should not be running beforehand._
-- [ ] The program should run from the command-line and take a text file as input;
-- [ ] The program should read the input text file and parse its content;
+- [X] You will need to **record a video explaining the code** you created, the decisions you made, its functionality, and demonstrating the complete operation of the challenge. _Remember to show the execution from scratch, it should not be running beforehand._
+- [X] The program should run from the command-line and take a text file as input;
+- [X] The program should read the input text file and parse its content;
 
 ### Rules
 - [ ] An 'F' indicates a foul on that chance and no pins knocked down (identical for scoring to a roll of 0).
@@ -122,10 +122,12 @@ custom.
 - [ ] tenth Frame: A strike receives two extra rolls for bonus pins.
 - [ ] tenth Frame: A spare in the first two rolls receives a third roll for bonus pins.
 
-- [ ] The program should handle bad input like more than ten throws
+- [ ] The program should handle bad input
   - [ ] negative number of knocked down pins
-  - [ ] more than 10
+  - [ ] more than 10 on knocked down pins
   - [ ] invalid score value or incorrect format
+  - [ ] like more than ten throws
+  - [X] invalid format file
 
 ## Setup Ruby (only if you have not installed)
 
