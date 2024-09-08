@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'data_loader/data_loader_text_file'
+require 'data_loader/text_file'
 
-RSpec.describe DataLoaderTextFile do
+RSpec.describe DataLoader::TextFile do
   describe '#load_data' do
     context 'when input file is valid' do
       it 'loads players names' do
@@ -25,11 +25,9 @@ RSpec.describe DataLoaderTextFile do
     end
 
     context 'when input file is invalid' do
-      context 'when the file format is invalid' do
-        it 'raises the corresponding error message' do
-          data_loader = described_class.new(file_fixture('invalid-format.csv'))
-          expect { data_loader.load_data }.to raise_error(DataLoaderError, 'Invalid file format')
-        end
+      it 'raises the corresponding error message when the file format is invalid' do
+        data_loader = described_class.new(file_fixture('invalid-format.csv'))
+        expect { data_loader.load_data }.to raise_error(DataLoader::Error, 'Invalid file format')
       end
     end
   end
