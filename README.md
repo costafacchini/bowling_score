@@ -171,3 +171,7 @@ The explanations are in this video -> https://www.loom.com/share/a216ae25ca1247e
 ## Modeling
 
 ![alt text](modeling.png)
+
+Modeling updates:
+  - The Base for DataLoad instead receive the source on load data method, just defines load data and let the concrete class initializer be responsible for the source;
+  - Join invalid score and negative score in just one validator;

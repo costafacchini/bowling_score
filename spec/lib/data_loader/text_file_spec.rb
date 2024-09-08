@@ -25,9 +25,16 @@ RSpec.describe DataLoader::TextFile do
     end
 
     context 'when input file is invalid' do
-      it 'raises the corresponding error message when the file format is invalid' do
+      it 'raises the corresponding error message' do
         data_loader = described_class.new(file_fixture('invalid-format.csv'))
         expect { data_loader.load_data }.to raise_error(DataLoader::Error, 'Invalid file format')
+      end
+    end
+
+    context 'with input file has invalid score' do
+      it 'raises the corresponding error message ' do
+        data_loader = described_class.new(file_fixture('negative.txt'))
+        expect { data_loader.load_data }.to raise_error(DataLoader::Error, /Invalid score : -/)
       end
     end
   end
