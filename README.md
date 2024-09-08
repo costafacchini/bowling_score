@@ -125,10 +125,11 @@ custom.
 - [ ] The program should handle bad input
   - [x] negative number of knocked down pins
   - [x] more than 10 on knocked down pins
-  - [ ] invalid score value or incorrect format
+  - [X] invalid score value or incorrect format
   - [ ] like more than ten throws
   - [X] invalid format file
   - [X] empty file
+  - [X] accept F as a valid score
 
 ## Setup Ruby (only if you have not installed)
 

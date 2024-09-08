@@ -10,7 +10,8 @@ module DataLoader
       @players = []
       @errors = []
       @validation_rules = [
-        ValidationRule::InvalidScore.new
+        ValidationRule::InvalidScore.new,
+        ValidationRule::IncorrectFormat.new
       ]
     end
 

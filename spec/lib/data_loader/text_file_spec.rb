@@ -38,6 +38,20 @@ RSpec.describe DataLoader::TextFile do
       end
     end
 
+    context 'with input file has free text' do
+      it 'raises the corresponding error message ' do
+        data_loader = described_class.new(file_fixture('free-text.txt'))
+        expect { data_loader.load_data }.to raise_error(DataLoader::Error, /Invalid format :/)
+      end
+    end
+
+    context 'with input file has invalid score' do
+      it 'raises the corresponding error message ' do
+        data_loader = described_class.new(file_fixture('invalid-score.txt'))
+        expect { data_loader.load_data }.to raise_error(DataLoader::Error, /Invalid format :/)
+      end
+    end
+
     context 'with input file is empty' do
       it 'raises the corresponding error message ' do
         data_loader = described_class.new(file_fixture('empty.txt'))
