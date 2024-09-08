@@ -21,7 +21,21 @@ RSpec.describe Main do
     end
   end
 
+  context 'when there is no argument' do
+    it 'outputs error message' do
+      stub_const('ARGV', [])
+
+      expect { load 'main.rb' }.to output("How to use: ruby bowling.rb path/to/file.txt\n").to_stdout
+    end
+  end
+
   context 'when input file is invalid' do
+    it 'raises the corresponding error message' do
+      stub_const('ARGV', [file_fixture('invalid-format.csv')])
+
+      expect { load 'main.rb' }.to raise_error('Invalid file format')
+    end
+
     context 'with invalid characters present' do
       xit 'raises the corresponding error message' do
       end
