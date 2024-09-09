@@ -39,17 +39,23 @@ RSpec.describe Calculator::Score do
         player1 = Player.new('John')
         player1.add_score_at_pinfall('10')
         player1.add_score_at_pinfall('10')
+        player1.add_score_at_pinfall('2')
+        player1.add_score_at_pinfall('6')
 
         player2 = Player.new('Jeff')
         player2.add_score_at_pinfall('10')
         player2.add_score_at_pinfall('10')
+        player2.add_score_at_pinfall('4')
+        player2.add_score_at_pinfall('F')
 
         described_class.new.fill_total_scores([player1, player2])
 
-        expect(player1.pinfalls[0].total).to eq(20)
-        expect(player1.pinfalls[1].total).to eq(0)
-        expect(player2.pinfalls[0].total).to eq(20)
-        expect(player2.pinfalls[1].total).to eq(0)
+        expect(player1.pinfalls[0].total).to eq(22)
+        expect(player1.pinfalls[1].total).to eq(18)
+        expect(player1.pinfalls[2].total).to eq(0)
+        expect(player2.pinfalls[0].total).to eq(24)
+        expect(player2.pinfalls[1].total).to eq(14)
+        expect(player2.pinfalls[2].total).to eq(0)
       end
     end
     # rubocop:enable RSpec/ExampleLength

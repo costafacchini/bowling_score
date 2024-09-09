@@ -22,6 +22,6 @@ class Frame
   end
 
   def spare?
-    @scores.sum(&:to_i) == 10
+    @scores.size > 1 && @scores.sum(&:to_i) == 10
   end
 end

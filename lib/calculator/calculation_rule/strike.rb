@@ -2,10 +2,12 @@ require_relative 'base'
 
 module CalculationRule
   class Strike < Base
-    def total_for(frames, frame_index)
-      frame = frames[frame_index]
+    def eligible?(frame)
+      frame.strike?
+    end
 
-      return 0 if !frame.strike? || frames.size - 1 == frame_index
+    def total_for(frames, frame_index)
+      return 0 if frames.size - 1 == frame_index
 
       next_two_rolls = select_next_two_rolls(frames, frame_index)
       10 + next_two_rolls.take(2).sum

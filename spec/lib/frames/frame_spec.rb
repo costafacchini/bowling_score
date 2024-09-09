@@ -185,6 +185,15 @@ RSpec.describe Frame do
 
         expect(frame.spare?).to be true
       end
+
+      context 'when is a strike' do
+        it 'is false' do
+          frame = described_class.new(1, 10)
+          frame.add_score('10')
+
+          expect(frame.spare?).to be false
+        end
+      end
     end
 
     context 'when the sum of scores is not 10' do

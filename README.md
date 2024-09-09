@@ -115,9 +115,9 @@ custom.
 - [X] The program should read the input text file and parse its content;
 
 ### Rules
-- [ ] An 'F' indicates a foul on that chance and no pins knocked down (identical for scoring to a roll of 0).
+- [X] An 'F' indicates a foul on that chance and no pins knocked down (identical for scoring to a roll of 0).
 - [X] strike (X): knock down all 10 pins on the first roll. The frame receives ten pins plus a bonus of pinfall on the next two rolls.
-- [ ] spare (/): when a second roll of a frame is needed to knock down all ten pins. The frame receives ten pins plus a bonus of pinfall in the next roll.
+- [X] spare (/): when a second roll of a frame is needed to knock down all ten pins. The frame receives ten pins plus a bonus of pinfall in the next roll.
 - [ ] open frame: the frame is scored with the total number of pins knocked down.
 - [ ] tenth Frame: A strike receives two extra rolls for bonus pins.
 - [ ] tenth Frame: A spare in the first two rolls receives a third roll for bonus pins.
@@ -186,3 +186,4 @@ Modeling updates:
   - Create Frame class and add new methods to self manage when the scores is full;
   - Create Player class and add new method to self manage when need to add new frame or use the last frame added;
   - Create a builder to frames. The builder knows how to create a normal frame and tenth frame. Basically the difference is the configuration of rows limit and pins limit;
+  - Add method to calculation rules know when the rule is eligible;
