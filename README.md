@@ -116,7 +116,7 @@ custom.
 
 ### Rules
 - [ ] An 'F' indicates a foul on that chance and no pins knocked down (identical for scoring to a roll of 0).
-- [ ] strike (X): knock down all 10 pins on the first roll. The frame receives ten pins plus a bonus of pinfall on the next two rolls.
+- [X] strike (X): knock down all 10 pins on the first roll. The frame receives ten pins plus a bonus of pinfall on the next two rolls.
 - [ ] spare (/): when a second roll of a frame is needed to knock down all ten pins. The frame receives ten pins plus a bonus of pinfall in the next roll.
 - [ ] open frame: the frame is scored with the total number of pins knocked down.
 - [ ] tenth Frame: A strike receives two extra rolls for bonus pins.
