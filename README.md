@@ -191,3 +191,4 @@ Modeling updates:
   - Create Player class and add new method to self manage when need to add new frame or use the last frame added;
   - Create a builder to frames. The builder knows how to create a normal frame and tenth frame. Basically the difference is the configuration of rows limit and pins limit;
   - Add method to calculation rules know when the rule is eligible;
+  - Change the ScorePrintBase to print in steps. The Score Print adapters needs to implement just this steps with your own code.
