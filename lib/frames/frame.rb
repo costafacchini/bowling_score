@@ -14,6 +14,14 @@ class Frame
   end
 
   def full?
-    @scores.size == @rolls_limit || scores.sum(&:to_i) >= @pins_limit
+    @scores.size == @rolls_limit || @scores.sum(&:to_i) >= @pins_limit
+  end
+
+  def strike?
+    @scores[0].to_i == 10
+  end
+
+  def spare?
+    @scores.sum(&:to_i) == 10
   end
 end
