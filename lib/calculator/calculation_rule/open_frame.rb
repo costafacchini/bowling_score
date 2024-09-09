@@ -8,7 +8,7 @@ module CalculationRule
     end
 
     def total_for(frames, frame_index)
-      frames[frame_index]&.scores.sum(&:to_i)
+      frames[frame_index]&.scores&.sum(&:to_i)
     end
   end
 end
