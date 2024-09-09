@@ -35,10 +35,5 @@ RSpec.describe Main do
 
       expect { load 'main.rb' }.to raise_error('Invalid file format')
     end
-
-    context 'with invalid number of throwings' do
-      xit 'raises the corresponding error message' do
-      end
-    end
   end
 end
