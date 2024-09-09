@@ -1,4 +1,4 @@
-require 'player'
+require_relative '../player'
 require_relative 'base'
 
 module DataLoader

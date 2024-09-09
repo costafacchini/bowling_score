@@ -166,6 +166,12 @@ $ bundle exec rspec
 $ bundle exec rubocop
 ```
 
+# How to use
+
+```bash
+$ ruby lib/main.rb spec/fixtures/positive/scores.txt
+```
+
 ## Decisions
 
 The explanations are in this video -> https://www.loom.com/share/a216ae25ca1247e1b7d1856a335306f0?sid=4c12a889-9615-4888-b11a-d3aa9190e7b1

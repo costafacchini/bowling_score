@@ -25,7 +25,7 @@ RSpec.describe Main do
     it 'outputs error message' do
       stub_const('ARGV', [])
 
-      expect { load 'main.rb' }.to output("How to use: ruby bowling.rb path/to/file.txt\n").to_stdout
+      expect { load 'main.rb' }.to output("How to use: ruby lib/main.rb spec/fixtures/positive/scores.txt\n").to_stdout
     end
   end
 
