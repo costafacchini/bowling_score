@@ -131,9 +131,9 @@ custom.
   - [X] empty file
   - [X] accept F as a valid score
 
-- [ ] For each player, print their name on a separate line before printing that player's pinfalls and score.
-- [ ] All values are tab-separated.
-- [ ] The output should calculate if a player scores a strike ('X'), a spare ('/') and allow for extra chances in the tenth frame.
+- [X] For each player, print their name on a separate line before printing that player's pinfalls and score.
+- [X] All values are tab-separated.
+- [X] The output should calculate if a player scores a strike ('X'), a spare ('/') and allow for extra chances in the tenth frame.
 
 ## Setup Ruby (only if you have not installed)
 
@@ -192,3 +192,6 @@ Modeling updates:
   - Create a builder to frames. The builder knows how to create a normal frame and tenth frame. Basically the difference is the configuration of rows limit and pins limit;
   - Add method to calculation rules know when the rule is eligible;
   - Change the ScorePrintBase to print in steps. The Score Print adapters needs to implement just this steps with your own code.
+  - Change the ScorePrintBase again, there's no footer to print and rename the method to normalize frame score, I think it's more expressive in what he does.
+  - Change the modeling to final version.
+  - I changed the printer interface again because if we implement, for example, printing in a text file, its printing method must know how it will print.

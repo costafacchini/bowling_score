@@ -18,7 +18,7 @@ class Frame
   end
 
   def strike?
-    @scores[0].to_i == 10
+    @scores.size == 1 && @scores[0].to_i == 10
   end
 
   def spare?
