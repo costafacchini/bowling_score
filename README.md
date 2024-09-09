@@ -122,11 +122,11 @@ custom.
 - [ ] tenth Frame: A strike receives two extra rolls for bonus pins.
 - [ ] tenth Frame: A spare in the first two rolls receives a third roll for bonus pins.
 
-- [ ] The program should handle bad input
+- [X] The program should handle bad input
   - [x] negative number of knocked down pins
   - [x] more than 10 on knocked down pins
   - [X] invalid score value or incorrect format
-  - [ ] like more than ten throws
+  - [X] like more than ten throws
   - [X] invalid format file
   - [X] empty file
   - [X] accept F as a valid score
@@ -179,3 +179,4 @@ Modeling updates:
   - Join invalid score and negative score in just one validator;
   - Create Frame class and add new methods to self manage when the scores is full;
   - Create Player class and add new method to self manage when need to add new frame or use the last frame added;
+  - Create a builder to frames. The builder knows how to create a normal frame and tenth frame. Basically the difference is the configuration of rows limit and pins limit;

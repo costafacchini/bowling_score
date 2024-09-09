@@ -1,21 +1,18 @@
-require_relative 'frame'
+require_relative 'frames/frame_builder'
 
 class Player
   attr_reader :name
   attr_accessor :pinfalls
 
-  NORMAL_FRAME_ROLLS = 2
-  TENTH_FRAME_ROLLS = 3
-
   def initialize(name)
     @name = name
-    @pinfalls = [Frame.new(NORMAL_FRAME_ROLLS)]
+    @pinfalls = [FrameBuilder.create_normal_frame]
   end
 
   def add_score_at_pinfall(score)
     last_frame = @pinfalls[pinfalls.size - 1]
     if last_frame.full?
-      frame = @pinfalls.size <= 9 ? Frame.new(NORMAL_FRAME_ROLLS) : Frame.new(TENTH_FRAME_ROLLS)
+      frame = @pinfalls.size < 9 ? FrameBuilder.create_normal_frame : FrameBuilder.create_tenth_frame
       frame.add_score(score)
       @pinfalls << frame
     else

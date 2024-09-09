@@ -1,4 +1,5 @@
 require_relative 'validation_rule/invalid_score'
+require_relative 'validation_rule/incorrect_format'
 
 module DataLoader
   class Error < StandardError; end
@@ -19,12 +20,19 @@ module DataLoader
 
     private
 
+    def validate_score(score, index)
+      @validation_rules.each { |rule| @errors << "Line #{index}: #{rule.error_message}" unless rule.apply(score) }
+    end
+
     def check_errors
+      validate_throws
       raise Error, "Fix erros and try again: \n#{@errors.join("\n")}" if @errors.any?
     end
 
-    def validate_score(score, index)
-      @validation_rules.each { |rule| @errors << "Line #{index}: #{rule.error_message}" unless rule.apply(score) }
+    def validate_throws
+      @players.each do |player|
+        @errors << "Player #{player.name} has extra score" if player.pinfalls.size > 10
+      end
     end
   end
 end

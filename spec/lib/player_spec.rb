@@ -34,6 +34,7 @@ RSpec.describe Player do
     end
 
     context 'when already have 9 frames full' do
+      # rubocop:disable RSpec/ExampleLength
       it 'adds the score to a tenth frame with 3 rolls' do
         player = described_class.new('John Doe')
         player.add_score_at_pinfall('10')
@@ -53,8 +54,9 @@ RSpec.describe Player do
         player.add_score_at_pinfall('8')
 
         expect(player.pinfalls.size).to be(10)
-        expect(player.pinfalls[9].scores).to eql(['10', '10', '8'])
+        expect(player.pinfalls[9].scores).to eql(%w[10 10 8])
       end
+      # rubocop:enable RSpec/ExampleLength
     end
   end
 end

@@ -16,9 +16,8 @@ module DataLoader
         name, score = line.split
         validate_score(score, index)
 
-        player = @players.find { |p| p.name == name } || Player.new(name)
-        player.pinfalls << score
-        @players << player unless @players.include?(player)
+        player = create_or_load_player(name)
+        player.add_score_at_pinfall(score)
       end
 
       check_errors
@@ -32,6 +31,15 @@ module DataLoader
 
     def validate_file_empty
       raise Error, 'Empty file informed' if File.zero?(@source)
+    end
+
+    def create_or_load_player(name)
+      player = @players.find { |p| p.name == name }
+      if player.nil?
+        player = Player.new(name)
+        @players << player
+      end
+      player
     end
   end
 end
