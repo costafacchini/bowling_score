@@ -1,16 +1,14 @@
 require_relative 'base'
 
 module CalculationRule
-  class Spare < Base
+  class OpenFrame < Base
     def eligible?(frames, frame_index)
       frame = frames[frame_index]
-      frame.spare?
+      !frame.spare? && !frame.strike? || frames.size - 1 == frame_index
     end
 
     def total_for(frames, frame_index)
-      return 0 if frames.size - 1 == frame_index
-
-      10 + frames[frame_index + 1]&.scores&.first.to_i
+      frames[frame_index]&.scores.sum(&:to_i)
     end
   end
 end

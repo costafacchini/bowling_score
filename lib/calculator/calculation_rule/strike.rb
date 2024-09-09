@@ -2,7 +2,8 @@ require_relative 'base'
 
 module CalculationRule
   class Strike < Base
-    def eligible?(frame)
+    def eligible?(frames, frame_index)
+      frame = frames[frame_index]
       frame.strike?
     end
 

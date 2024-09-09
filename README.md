@@ -118,9 +118,9 @@ custom.
 - [X] An 'F' indicates a foul on that chance and no pins knocked down (identical for scoring to a roll of 0).
 - [X] strike (X): knock down all 10 pins on the first roll. The frame receives ten pins plus a bonus of pinfall on the next two rolls.
 - [X] spare (/): when a second roll of a frame is needed to knock down all ten pins. The frame receives ten pins plus a bonus of pinfall in the next roll.
-- [ ] open frame: the frame is scored with the total number of pins knocked down.
-- [ ] tenth Frame: A strike receives two extra rolls for bonus pins.
-- [ ] tenth Frame: A spare in the first two rolls receives a third roll for bonus pins.
+- [X] open frame: the frame is scored with the total number of pins knocked down.
+- [X] tenth Frame: A strike receives two extra rolls for bonus pins.
+- [X] tenth Frame: A spare in the first two rolls receives a third roll for bonus pins.
 
 - [X] The program should handle bad input
   - [x] negative number of knocked down pins
@@ -130,6 +130,10 @@ custom.
   - [X] invalid format file
   - [X] empty file
   - [X] accept F as a valid score
+
+- [ ] For each player, print their name on a separate line before printing that player's pinfalls and score.
+- [ ] All values are tab-separated.
+- [ ] The output should calculate if a player scores a strike ('X'), a spare ('/') and allow for extra chances in the tenth frame.
 
 ## Setup Ruby (only if you have not installed)
 
