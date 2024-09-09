@@ -195,3 +195,6 @@ Modeling updates:
   - Change the ScorePrintBase again, there's no footer to print and rename the method to normalize frame score, I think it's more expressive in what he does.
   - Change the modeling to final version.
   - I changed the printer interface again because if we implement, for example, printing in a text file, its printing method must know how it will print.
+
+## Improvements
+  - [ ] Create workflow to run tests and linter
