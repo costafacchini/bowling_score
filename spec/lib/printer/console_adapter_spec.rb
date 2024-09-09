@@ -1,25 +1,16 @@
 require 'spec_helper'
+require 'test_helper'
 require 'printer/console_adapter'
 require 'player'
 require 'calculator/score'
 
 RSpec.describe Printer::ConsoleAdapter do
-  def build_player(name, scores)
-    player = Player.new(name)
-    scores.each do |score|
-      player.add_score_at_pinfall(score)
-    end
-    Calculator::Score.new.fill_total_scores([player])
-
-    player
-  end
-
   describe '#print' do
     it 'prints bowling card scoring' do
-      player1 = build_player('John',
-                             %w[10 7 3 9 0 10 0 8 8 2 F 6 10 10 10 8 1])
-      player2 = build_player('Jeff',
-                             %w[3 7 6 3 10 8 1 10 10 9 0 7 3 4 4 10 9 1])
+      player1 = build_player_with_totals('John',
+                                         %w[10 7 3 9 0 10 0 8 8 2 F 6 10 10 10 8 1])
+      player2 = build_player_with_totals('Jeff',
+                                         %w[3 7 6 3 10 8 1 10 10 9 0 7 3 4 4 10 9 1])
 
       sample = "Frame\t\t1\t\t2\t\t3\t\t4\t\t5\t\t6\t\t7\t\t8\t\t9\t\t10\n" \
                "John\n" \

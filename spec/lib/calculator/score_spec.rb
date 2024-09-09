@@ -1,24 +1,12 @@
 require 'spec_helper'
+require 'test_helper'
 require 'calculator/score'
 require 'player'
 
 RSpec.describe Calculator::Score do
   describe '#fill_total_scores' do
-    # rubocop:disable RSpec/ExampleLength
     it 'fills total scores for pinfalls' do
-      player = Player.new('John')
-      player.add_score_at_pinfall('10')
-      player.add_score_at_pinfall('10')
-      player.add_score_at_pinfall('10')
-      player.add_score_at_pinfall('10')
-      player.add_score_at_pinfall('10')
-      player.add_score_at_pinfall('10')
-      player.add_score_at_pinfall('10')
-      player.add_score_at_pinfall('10')
-      player.add_score_at_pinfall('10')
-      player.add_score_at_pinfall('10')
-      player.add_score_at_pinfall('10')
-      player.add_score_at_pinfall('10')
+      player = build_player('John', %w[10 10 10 10 10 10 10 10 10 10 10 10])
 
       described_class.new.fill_total_scores([player])
 
@@ -36,17 +24,8 @@ RSpec.describe Calculator::Score do
 
     context 'when there is more than one player' do
       it 'fills total scores for all players' do
-        player1 = Player.new('John')
-        player1.add_score_at_pinfall('10')
-        player1.add_score_at_pinfall('10')
-        player1.add_score_at_pinfall('2')
-        player1.add_score_at_pinfall('6')
-
-        player2 = Player.new('Jeff')
-        player2.add_score_at_pinfall('10')
-        player2.add_score_at_pinfall('10')
-        player2.add_score_at_pinfall('4')
-        player2.add_score_at_pinfall('F')
+        player1 = build_player('John', %w[10 10 2 6])
+        player2 = build_player('Jeff', %w[10 10 4 F])
 
         described_class.new.fill_total_scores([player1, player2])
 
@@ -58,6 +37,5 @@ RSpec.describe Calculator::Score do
         expect(player2.pinfalls[2].total).to eq(42)
       end
     end
-    # rubocop:enable RSpec/ExampleLength
   end
 end
