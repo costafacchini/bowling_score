@@ -17,6 +17,6 @@ jobs:
         with:
           bundler-cache: true
       - name: Lint Ruby files
-        run: bundle exec rubocop --display-cop-names --parallel
+        run: bundle exec rubocop
       - name: Run tests (RSpec)
-        run: bin/rspec
+        run: bundle exec rspec
