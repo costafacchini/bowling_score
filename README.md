@@ -212,4 +212,4 @@ For the scorekeeping part, I implemented an interface that defines the contract 
 And finally, the GameBowlingScorer class has been implemented, which should connect all the previously implemented parts. When it is created, it should receive a data loader, a score calculator, and a score printer.
 
 ## Improvements
-  - [ ] Create workflow to run tests and linter
+  - [X] Create workflow to run tests and linter
