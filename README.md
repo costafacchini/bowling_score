@@ -176,15 +176,11 @@ $ bundle exec rubocop
 $ ruby lib/main.rb spec/fixtures/positive/scores.txt
 ```
 
-## Decisions
-
-The explanations are in this video -> https://www.loom.com/share/a216ae25ca1247e1b7d1856a335306f0?sid=4c12a889-9615-4888-b11a-d3aa9190e7b1
-
 ## Modeling
 
 ![alt text](modeling.png)
 
-Modeling updates:
+### Modeling updates:
   - The Base for DataLoad instead receive the source on load data method, just defines load data and let the concrete class initializer be responsible for the source;
   - Join invalid score and negative score in just one validator;
   - Create Frame class and add new methods to self manage when the scores is full;
@@ -195,6 +191,25 @@ Modeling updates:
   - Change the ScorePrintBase again, there's no footer to print and rename the method to normalize frame score, I think it's more expressive in what he does.
   - Change the modeling to final version.
   - I changed the printer interface again because if we implement, for example, printing in a text file, its printing method must know how it will print.
+
+## Decisions
+
+I started the challenge by creating a class model, thinking about the separation of reaponsabilities to maintain high cohesion and low coupling.
+The first step was to create a base class to load and process data regardless of the file type. Then I implemented a specialization of it that knows how to process text files. If the need arises to process a file in a different format, all you need to do is implement the adapter that knows how to read that type of file.
+
+After loading data, we need to validate the score inputs. So, I thought about having the validation rules separate. If a new rule is needed, we just need to create a new validation rule and load it into the validation rules array.
+The data must be loaded into a player collection, whose structure must contain a collection of frames (pinfalls) and the player's name.
+
+A frame must contain a collection of scores and the total score of that frame. But the total is not filled when the data is been loaded.
+A frame must also know when it contains a strike or a spare.
+Thinking about the score calculation part, I thought of creating a score calculator that will be responsible for applying the rules and calculating the total of each frame.
+
+After all the data has been loaded, it is time to create a score calculator that will be responsible for applying the calculation rules and calculating the total for each frame.
+If we need to create a new rule, we just need to inherit the CalculationRule class which has the interface that must be followed by new calculators.
+
+For the scorekeeping part, I implemented an interface that defines the contract that the totalizers must follow. That way, if we need to extend the code by printing in HTML for example, we just need to implement a new class specialized for that.
+
+And finally, the GameBowlingScorer class has been implemented, which should connect all the previously implemented parts. When it is created, it should receive a data loader, a score calculator, and a score printer.
 
 ## Improvements
   - [ ] Create workflow to run tests and linter
