@@ -23,8 +23,12 @@ jobs:
           gem install bundler
           bundle install
 
+      - name: List files (debugging step)
+        run: |
+          ls -alh
+
       - name: Lint code for consistent style
-        run: bundle exec rubocop
+        run: bundle exec rubocop --config .rubocop.yml
 
   test:
     runs-on: ubuntu-latest
