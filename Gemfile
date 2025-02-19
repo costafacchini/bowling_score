@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.7.8'
+ruby '3.0.0'
 
 gem 'rspec'
 gem 'rubocop', '~> 1.50', require: false
