@@ -59,12 +59,12 @@ PLATFORMS
 
 DEPENDENCIES
   rspec
-  rubocop (~> 1.50)
+  rubocop (~> 1.72)
   rubocop-rspec (~> 2.3.0)
   simplecov
 
 RUBY VERSION
-   ruby 3.0.0p0
+   ruby 3.3.1p55
 
 BUNDLED WITH
-   2.5.23
+   2.6.4
