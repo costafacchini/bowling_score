@@ -105,7 +105,7 @@ custom.
 ## Requirements
 
 ```shell
-  ruby 2.7.3
+  ruby 2.7.8
 ```
 
 ## Specifications

@@ -30,7 +30,7 @@ module DataLoader
     end
 
     def validate_file_empty
-      raise Error, 'Empty file informed' if File.zero?(@source)
+      raise Error, 'Empty file informed' if File.empty?(@source)
     end
 
     def create_or_load_player(name)
