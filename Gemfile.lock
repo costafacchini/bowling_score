@@ -44,6 +44,9 @@ GEM
       lint_roller (~> 1.1)
       rubocop (>= 1.72.1, < 2.0)
       rubocop-ast (>= 1.38.0, < 2.0)
+    rubocop-rake (0.7.1)
+      lint_roller (~> 1.1)
+      rubocop (>= 1.72.1)
     rubocop-rspec (2.3.0)
       rubocop (~> 1.0)
       rubocop-ast (>= 1.1.0)
@@ -66,6 +69,7 @@ DEPENDENCIES
   rspec
   rubocop (~> 1.72)
   rubocop-performance
+  rubocop-rake
   rubocop-rspec (~> 2.3.0)
   simplecov
 
