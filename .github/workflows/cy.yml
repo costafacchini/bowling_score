@@ -9,23 +9,18 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Check out the repository
+        uses: actions/checkout@v3
 
-      - name: Set up Ruby
+      - name: Set up Ruby 3.3.1
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: .ruby-version
-          bundler-cache: true
+          ruby-version: 3.3.1
 
       - name: Install dependencies
         run: |
           gem install bundler
           bundle install
-
-      - name: List files (debugging step)
-        run: |
-          ls -alh
 
       - name: Lint code for consistent style
         run: bundle exec rubocop --config .rubocop.yml
