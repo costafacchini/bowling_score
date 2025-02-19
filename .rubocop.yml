@@ -2,7 +2,6 @@ require: rubocop-rspec
 
 plugins:
   - rubocop-performance
-  - rubocop-rake
 
 AllCops:
   Exclude:
